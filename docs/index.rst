@@ -37,7 +37,8 @@ Below is the list of key features of the RoverWing:
   - two additional I2C sensors
   
 
-The RoverWing uses same connectors for power supply, motors, encoders, and I2C sensors as the REV Robotics hub used in First Tech Challenge  robotics competition, so it can be easily used with the same motors and sensors. 
+The RoverWing uses same connectors for power supply, motors, encoders, and I2C sensors as the `REV Robotics Expansion hub <http://www.revrobotics.com/rev-31-1153/>`_ 
+used in `First Tech Challenge <https://www.firstinspires.org/robotics/ftc>`_  robotics competition, so it can be easily used with the same motors and sensors. 
   
 Hardware
 ========
@@ -48,11 +49,13 @@ Power
 -----
 
 The board can be powered by a 7-14V DC power supply such as 2 or 3 cell LiPO battery or  a 10-cell NiMH battery. 
-The battery port uses JST VH male connector. We recommend using 18 AWG or larger cables for power supply;  see section `Cables`_ for list of compatible cables and adapters. There is also a power indicator LED next to the power connector. 
+The battery port uses JST VH male connector. We recommend using 18 AWG or larger cables for power supply;  see section `Cables`_ for list of 
+compatible cables and adapters. There is also a power indicator LED next to the power connector. 
 
 .. Warning::
-   The VH connectors are polarized, so they can only be plugged in one way. Because of this, there  is no reverse  polarity protection, 
-   on the board. Make sure the power cables you use use the same polarity convention as the RoverWing, otherwise you will permanently damage the board!!
+   The VH connectors are polarized, so they can only be plugged in one way. Because of this, there  is no reverse  polarity protection 
+   you will permanently damage the board!!
+   on the board. If you are making your own power cables, make sure to use the same polarity convention as the RoverWing, otherwise 
    
    
 
@@ -91,8 +94,9 @@ To avoid overheating the motor drivers, it is recommended to attach  additional 
 more than 2A continuous. 
 
 
-In addition, the RoverWing provides two ports for connecting quadrature encoders, one for each motor. The encoder ports use JST PH4 connectors, 
-and pinouts are shown below. These are the same ports and pinouts as used by REV Robotics hubs, so one can use the same encoder cables. 
+In addition, the RoverWing provides two ports for connecting quadrature encoders, one for each motor. The encoder ports use 
+`JST PH4 <http://www.jst-mfg.com/product/detail_e.php?series=199>`_ connectors, 
+and pinouts are shown below. These are the same connectors and pinouts as used by REV Robotics hubs, so one can use the same encoder cables. 
 
 
 
