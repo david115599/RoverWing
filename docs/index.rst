@@ -27,7 +27,7 @@ Below is the list of key features of the RoverWing:
 
 * Provides the hardware and firmware support for connecting the following external peripherals
 
-  - Motors: two brushed DC motors, at up to 14V@2.9A per motor
+  - Motors: two brushed DC motors, at up to 2.9A at 14V per motor
   - Quadrature encoders for each motor
   - Sonars: support for three HC-SR04 or compatible ultrasonic sensors (sonars)  
   - Servos: four servos (5V) (see note on power limit below)
@@ -66,7 +66,7 @@ The MCU communicates with the Feather board via I2C
 
 Inertial Motion Unit
 --------------------
-
+RoverWing contains a  Inertial Motion Unit, based on MPU6050 chip by Invensense. This is a 6 degree of freedom sensor (3 axes gyro and 3 axes accelerometer); combined with proper data fusion algorithms, it can  be used for determining robot orientation in space. Note that data obtained from this sensor alone will always suffer from accumulating error (drift); to compensate it, you need to use an additional magnetometer (compass) sensor. 
 
 
 Motors and encoders
@@ -74,7 +74,7 @@ Motors and encoders
 The RoverWing provides connections for two brushed DC motors, at the same voltage as the main power supply (7-14V). Each motor is 
 controlled by DRV8871 motor driver by Texas Instruments, which can provide up to 2.9A per motor. The drivers are current limited, 
 so the current will not exceed 2.9A even if the motor is stalled, which helps prevent motor burnout. The motor ports use JST VH connectors; 
-see ??? for list of compatible cables and adapters.
+see section `Cables`_ for list of compatible cables and adapters.
 
 To avoid overheating the motor drivers, it is recommended to attach  additional heatsinks to them if you intend to run the motors at 
 more than 2A continuous. 
@@ -87,12 +87,19 @@ In addition, the RoverWing provides two ports for connecting quadrature encoders
 
 Servos
 ------
-A
+RoverWing provides four servo connections. They can be used for any servo which are controlled by standard PWM signal (500 us -2500 us) and 5V power. 
+
+Note that the total current available for servos and Neopixel LEDs is about 2A. This is sufficient for micro scale servos, but might not be enough for standard size or larger  servos used under heavy load.  For example, for a popular `HS485HB <https://hitecrcd.com/products/servos/sport-servos/analog-sport-servos/hs-485hb/product>`_ servo, no-load current draw is 0.3A, but the stall draw  can be as high as 1.2A. 
+
+
+
 
 
 Sonars
 ------
+RoverWing provides connections for three ultrasonic distance sensors (HC-SR04 or compatible). These sonar sensors are very popular with hobby robot builders due to their low price  (about $2.50/piece)  and reliability. Note that these sonars use 5V power, so they can not be directly connected to 3.3V boards such as Adafruit Feather boards. RoverWing solves this problem by  including voltage level shifter  chip (TX1004EWR). 
 
+The sonars ports use JST PH4 connectors; see `Cables`_ for advice on choosing connector cables. 
 
 Analog inputs
 -------------
