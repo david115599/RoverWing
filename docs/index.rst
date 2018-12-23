@@ -10,7 +10,7 @@ and other peripherals commonly used by mobile robots. It also contains a microco
 to control these peripherals, which communicates with the Feather board using I2C protocol, thus freeing resources 
 of the Feather board for other purposes. 
 
-The RoverWing was heavily influenced by Adafruit's CRICKIT board (in particular, it has exact same dimensions and 
+The RoverWing was heavily influenced by Adafruit's `CRICKIT <https://www.adafruit.com/crickit>`_   board (in particular, it has exact same dimensions and 
 mounting holes as the CRICKIT board). However, unlike CRICKIT, it is intended for use with more powerful 12V motors 
 and provides a slightly different set of peripherals. 
 
@@ -45,11 +45,13 @@ Power
 -----
 
 The board can be powered by a 7-14V DC power supply such as 2 or 3 cell LiPO battery or  a 10-cell NiMH battery. 
-The battery port uses JST VH male connector; see ??? for list of compatible cables and adapters. Note that there 
+The battery port uses JST VH male connector; see `Cables`_ for list of compatible cables and adapters. Note that there 
 is no reverse  polarity protection, so double-check your connections! We recommend using 18 AWG or larger cable for main power connection. 
 
 The board has a 5V high-efficiency  voltage regulator, which provides power to a plugged in Feather board via the USB bus pin of the Feather board. 
 It also provides power to sonars, Neopixel LEDs, servos, and a 3.3V line regulator, which powers the built-in microcontroller and IMU. 
+
+
 
 Note that 5V regulator is capable of producing 2.5A output. Some of it is used by on-board electronics, leaving about 2A  available for Neopixels and servos. 
 
@@ -90,9 +92,12 @@ A
 Sonars
 ------
 
-A
+
 Analog inputs
 -------------
+
+
+
 
 Neopixel
 --------
@@ -116,6 +121,9 @@ Software
 
 Add-ons
 =======
+
+Cables
+------
 
 
 License
