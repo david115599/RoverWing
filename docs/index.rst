@@ -41,8 +41,8 @@ Hardware
 
 Below is the description of the RoverBoard hardware. 
 
- Power
- -----
+Power
+-----
 
 The board can be powered by a 7-14V DC power supply such as 2 or 3 cell LiPO battery or  a 10-cell NiMH battery. 
 The battery port uses JST VH male connector; see ??? for list of compatible cables and adapters. Note that there 
