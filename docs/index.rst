@@ -1,7 +1,7 @@
+*********
 RoverWing
 *********
 
-intro
 
 Introduction
 ============
@@ -17,7 +17,7 @@ and provides a slightly different set of peripherals.
 
 Below is the list of key features of the RoverWing:
 
-* Power: it can be powered by 7-14V power source, and contains a voltage regulator providing power to the Feather board
+* Can be powered by 7-14V power source; contains a voltage regulator providing power to the Feather board
 
 * Only uses 2 pins (SDA and SCL) of the Feather board. 
 
@@ -93,7 +93,7 @@ controlled by DRV8871 motor driver by Texas Instruments, which can provide up to
 so the current will not exceed 2.9A even if the motor is stalled, which helps prevent motor burnout. The motor ports use JST VH connectors; 
 see section `Cables`_ for list of compatible cables and adapters.
 
-To avoid overheating the motor drivers, it is recommended to attach  additional heatsinks to them if you intend to run the motors at 
+To avoid overheating, it is recommended to attach  additional heatsinks to the motor drivers if you intend to run the motors at 
 more than 2A continuous. 
 
 
@@ -106,7 +106,7 @@ and pinouts are shown below. These are the same connectors and pinouts as used b
 
 Servos
 ------
-RoverWing provides four servo connections. They can be used for any servo which are controlled by standard PWM signal (500 us -2500 us) and 5V power. 
+RoverWing provides four servo connections. They can be used for any servo which are controlled by standard PWM signal (500 us - 2500 us pulse duration) and 5V power. 
 
 .. Note::
    That the total current available for servos and Neopixel LEDs is about 2A. This is sufficient 
@@ -151,8 +151,8 @@ data from the IMU and magnetometer to provide a more reliable orientation data.
 
 
 .. Note::
-   TO avoid inteferference, it is recommended to place the magnetometer at least 15 cm (6 in) away from the  motors and other electronics. 
-   A GPS+compass sensor with a stand intended for quadcopters would work well. 
+   TO avoid interference, it is recommended to place the magnetometer at least 15 cm (6 in) away from the  motors and other electronics. 
+   A GPS+compass sensor with a stand intended for quadcopters should work well. 
    
 
 Additional I2C ports
