@@ -54,17 +54,16 @@ compatible cables and adapters. There is also a power indicator LED next to the 
 
 .. Warning::
    The VH connectors are polarized, so they can only be plugged in one way. Because of this, there  is no reverse  polarity protection 
-   you will permanently damage the board!!
    on the board. If you are making your own power cables, make sure to use the same polarity convention as the RoverWing, otherwise 
-   
+   you will permanently damage the board!!
    
 
-The board has a 5V high-efficiency  buck voltage convertor, which provides power to a plugged in Feather board via the USB bus pin of the Feather board. 
+The board has a 5V high-efficiency  buck voltage converter, which provides power to a plugged in Feather board via the USB bus pin of the Feather board. 
 It also provides power to sonars, Neopixel LEDs, servos, and a 3.3V line regulator, which powers the built-in microcontroller and IMU. 
 
 
 
-Note that 5V convertor is capable of producing 2.5A output. Some of it is used by on-board electronics, leaving about 2A  available for Neopixels and servos. 
+Note that 5V converter is capable of producing 2.5A output. Some of it is used by on-board electronics, leaving about 2A  available for Neopixels and servos. 
 
 
 Microcontroller
@@ -77,10 +76,14 @@ The MCU communicates with the Feather board via I2C bus.
 
 Inertial Motion Unit
 --------------------
-RoverWing contains a  Inertial Motion Unit, based on MPU6050 chip by Invensense. This is a 6 degree of freedom sensor (3 axes gyro 
-and 3 axes accelerometer); combined with proper data fusion algorithms, it can  be used for determining robot orientation in space. 
-Note that data obtained from this sensor alone will always suffer from accumulating error (drift); to compensate it, you need to use 
-an additional magnetometer (compass) sensor. 
+RoverWing contains a  Inertial Motion Unit, based on MPU6050 chip by Invensense. This is a 6 degree of freedom sensor (3 axis gyro 
+and 3 axis accelerometer), which can be used for  determining robot orientation in space. Provided firmware contains appropriate data 
+fusion algorithm, combining the sensor data and filtering out noise to return the robot orientation.
+
+.. Note::
+   Even with noise filtering, data obtained from this sensor alone will always suffer from accumulating error (drift); 
+   to compensate for it, you need to use  an additional magnetometer (compass) sensor as described in `GPS and compass`_ section. 
+   
 
 
 Motors and encoders
@@ -126,15 +129,31 @@ The sonars ports use JST PH4 connectors; see `Cables`_ for advice on choosing co
 
 Analog inputs
 -------------
-RoverWing provides connectors for 6 analog sensors, together with 3.3V power and ground connectors. Note that the analog signal shoudl not exceed 3.3V, otherwise you might damage the board!
+RoverWing provides connectors for 6 analog sensors, together with 3.3V power and ground connectors. 
+Note that the analog signal shoudl not exceed 3.3V, otherwise you might damage the board!
 
 
 Neopixel
 --------
+RoverWing provides a port for connecting `Neopixel smart LEDs <https://learn.adafruit.com/adafruit-neopixel-uberguide>`_.  This port uses `JST PH3 <http://www.jst-mfg.com/product/detail_e.php?series=199>`_ connector; the pinout is given below. 
+
+
 
 GPS and compass
 ---------------
+RoverWing provides connectors for external GPS and magnetometer (compass) sensors. It uses the same connectors (Hirose DF13) and pinouts as popular `Pixhawk 
+flight controller board <http://ardupilot.org/copter/docs/common-pixhawk-overview.html>`_  used in quadcopters. Thus, you can use  any GPS and 
+compass combination sensor which is compatible with Pixhawk 2.4. Such sensors can be found on eBay or AliExpress for as little as $15 (here is an 
+`example <https://www.aliexpress.com/item/Ublox-NEO-M8N-M8N-8N-High-Precision-GPS-Built-in-Compass-w-Stand-Holder-for-APM/32370714787.html>`_). 
 
+The provided firmware takes care of reading the GPS and magnetometer sensors, providing an easy to use interface for the user. It can also combine the 
+data from the IMU and magnetometer to provide a more reliable orientation data. 
+
+
+.. Note::
+   TO avoid inteferference, it is recommended to place the magnetometer at least 15 cm (6 in) away from the  motors and other electronics. 
+   A GPS+compass sensor with a stand intended for quadcopters would work well. 
+   
 
 Additional I2C ports
 --------------------
